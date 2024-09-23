@@ -1,0 +1,26 @@
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-5 offset-xl-1">
+        <h2 class="mb-4">Forgot your password?</h2>
+
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <%= f.label :email, class: "form-label" %>
+            <%= f.email_field :email, class: "form-control form-control-lg", autofocus: true, autocomplete: "email", placeholder: "Enter your email address" %>
+          </div>
+
+          <!-- Submit button -->
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <%= f.submit "Send me reset password instructions", class: "btn btn-primary btn-lg", style: "padding-left: 2.5rem; padding-right: 2.5rem;" %>
+          </div>
+        <% end %>
+
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</section>

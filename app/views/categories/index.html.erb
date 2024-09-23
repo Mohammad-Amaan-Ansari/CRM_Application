@@ -1,0 +1,30 @@
+<div class="container mt-4">
+  <h1>Categories</h1>
+  <%= link_to 'Add Category', new_category_path, class: 'btn btn-primary mb-3' %>
+  
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="col-1">serial_number</th>
+        <th class="col-5">Category Name</th>
+        <th class="col-3">Category Size</th>
+        <th class="col-4">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @categories.each_with_index do |category, index|%>
+        <tr>
+          <td class="col-1"><%= "PLN-%.3d" % (index + 1) %></td>
+          <td class="col-5"><%= category.c_name %></td>
+          <td class="col-3"><%= category.c_size %></td>
+          <td class="col-4">
+            <div class="d-flex justify-content-between">
+              <%= link_to 'View Products', category_products_path(category), class: 'btn btn-secondary' %>
+              <%= button_to 'Delete', category_path(category), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary ml-2' %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

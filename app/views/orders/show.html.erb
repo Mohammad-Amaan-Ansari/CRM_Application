@@ -1,0 +1,114 @@
+<h2>Order Details</h2>
+
+<!-- Add custom styles inside a <style> block -->
+<style>
+  .order-details {
+    border: 1px solid #ddd;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 75%;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+  }
+
+  .order-details h2 {
+    text-align: center;
+    font-size: 26px;
+    color: #004aad;
+    border-bottom: 2px solid #004aad;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  .order-info, .customer-info, .product-list {
+    margin-bottom: 25px;
+    padding: 15px;
+    background-color: #f9fbfc;
+    border: 1px solid #eee;
+    border-radius: 10px;
+  }
+
+  .order-info p, .customer-info p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+  }
+
+  .order-info strong, .customer-info strong {
+    color: #004aad;
+    font-weight: bold;
+  }
+
+  .product-list h3 {
+    color: #004aad;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .product-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .product-list ul li {
+    background-color: #eaf4fc;
+    border: 1px solid #cce2f7;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .product-list ul li span {
+    color: #333;
+    font-weight: bold;
+  }
+
+  .total-price {
+    font-weight: bold;
+    font-size: 20px;
+    color: #004aad;
+    text-align: right;
+    margin-top: 20px;
+  }
+
+  .total-price span {
+    font-size: 24px;
+    color: #28a745;
+  }
+</style>
+
+<!-- Order Details Content -->
+<div class="order-details">
+  <div class="order-info">
+    <p><strong>Order No:</strong> <%= @order.id %></p>
+    <p><strong>Total Amount:</strong> <%= number_to_currency(@order.total_amount, unit: "₹") %></p>
+  </div>
+
+  <div class="customer-info">
+    <h3>Customer Details</h3>
+    <p><strong>Email:</strong> <%= @order.user.email %></p>
+    <p><strong>Total Products:</strong> <%= @order.products.count %></p>
+  </div>
+
+  <div class="product-list">
+    <h3>Products</h3>
+    <ul>
+      <% @products.each do |product| %>
+        <li>
+          <span>SKU: <%= product.sku %></span>
+          <span>Price: <%= number_to_currency(product.price, unit: "₹") %></span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="total-price">
+    <p>Total Amount: <span><%= number_to_currency(@order.total_amount, unit: "₹") %></span></p>
+  </div>
+</div>

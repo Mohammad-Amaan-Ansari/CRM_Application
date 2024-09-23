@@ -1,0 +1,152 @@
+.app-logo {
+  max-width: 100px;
+}
+
+.app-name {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.heading h2 {
+  font-weight: bold;
+}
+
+.signin-buttons .btn {
+  min-width: 250px;
+}
+
+.social-signin .btn {
+  min-width: 220px;
+}
+
+.home-container {
+	background-color: rgb(255 255 255);
+}
+
+.body {
+	background-size:cover;
+}
+
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+
+/*.h-100 {
+  margin-top: 135px;
+}
+*/
+
+/* Styling for the Home Page */
+.home-container {
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('/assets/home_image.jpg');
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 93%;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, opacity;
+  margin-top: 0px;
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.overlay-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #333333; /* Dark overlay */
+  z-index: -1; /* Ensure the overlay is behind the content */
+}
+
+.content-container {
+  z-index: 1; /* Ensure the content is above the overlay */
+  color: white; /* Text color to contrast with background */
+  max-width: 900px; /* Restrict content width */
+}
+
+.main-heading {
+  font-size: 3.95rem; /* Larger heading size */
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: white; /* Keep highlight text white */
+}
+
+.subheading {
+  font-size: 1.2rem; /* Smaller font size for subheading */
+  color: rgba(255, 255, 255, 0.8); /* Slightly lighter for better contrast */
+  margin-bottom: 3rem;
+}
+
+.action-buttons .btn-primary {
+  background-color: #4c57ed;
+  border-color: #4c57ed;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+.action-buttons .btn-outline-light {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+}
+
+h1, p {
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); /* Add subtle shadow for readability */
+}
+
+
+/* Navbar Overlap */
+.navbar {
+  position: fixed; /* Navbar sticks to the top */
+  top: 0;
+  width: 100%;
+  z-index: 1; /* Ensure navbar is on top */
+}
+
+.navbar-transparent {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* Semi-transparent navbar background */
+}
+
+.navbar .nav-link, .navbar-brand {
+  color: white !important; /* Navbar links in white */
+}
+
+
+.capsule-button {
+  border-radius: 50px; /* Makes it capsule-shaped */
+  padding: 0.5rem 1.5rem; /* Adjust the padding for the button */
+  background-color: #4c57ed; /* Button color (use your preferred color) */
+  border-color: #4c57ed;
+  font-size: 1.1rem; /* Adjust the font size */
+  color: white; /* Text color */
+}
+
+.capsule-button:hover {
+  background-color: #3a46c9; /* Darken the button color on hover */
+  border-color: #3a46c9;
+  color: white; /* Text color remains white */
+}
+
+
+
+

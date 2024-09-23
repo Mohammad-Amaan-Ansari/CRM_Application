@@ -1,0 +1,37 @@
+<div class="container mt-4">
+  <h1>All Products </h1>
+  <%= link_to 'Add Product', new_category_product_path(@category), class: 'btn btn-primary mb-3' %>
+  <%= link_to 'Orders', orders_path, class: 'btn btn-primary mb-3' %>
+  
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Product ID</th>
+        <th>Name</th>
+        <th>SKU</th>
+        <th>MRP</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @products.each_with_index do |product, index| %>
+        <tr>
+          <td><%= (index + 1) %></td>
+          <td><%= product.name %></td>
+          <td><%= product.sku %></td>
+          <td>$<%= product.mrp %></td>
+          <td class="text-center">
+            <div class="d-inline-block">
+            <%= link_to 'Show', [@category, product], class: 'btn btn-primary btn-sm ' %>
+            </div>
+            <div class="d-inline-block">
+            <%= button_to 'Delete', [@category, product], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger mb-0' %>
+            </div>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

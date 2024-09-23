@@ -1,0 +1,40 @@
+<%= form_with(model: @order, local: true) do |form| %>
+  <% if @order.errors.any? %>
+    <div class="alert alert-danger">
+      <h4>There were errors with your submission:</h4>
+      <ul>
+        <% @order.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :product_ids, 'Select Product SKUs' %>
+    <%= form.collection_select :product_ids, Product.all, :id, :sku, { prompt: 'Select Products', include_hidden: false }, { class: 'form-control', multiple: true } %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :user_id, 'Select Customer' %>
+    <%= form.collection_select :user_id, 
+        User.where(role: 'customer'),  # Filter users by role
+        :id,                            # Value method
+        :email,                         # Display method
+        { prompt: 'Select Customer' },  # Options for the select tag
+        { class: 'form-control' }        # HTML options
+    %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :total_amount %>
+    <%= form.text_field :total_amount, class: 'form-control', readonly: true %>
+  </div>
+  
+  <%= form.submit 'Submit Order', class: 'btn btn-primary' %>
+<% end %>
+
+<%# <div class="form-group">
+    <%= f.label :role %>
+    <%#= f.select :role, User.roles.keys.reject { |role| role == 'admin' }.map { |role| [role.titleize, role] }, {} %>
+  <%# </div> %> 

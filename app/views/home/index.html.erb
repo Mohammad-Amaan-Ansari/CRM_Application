@@ -1,0 +1,19 @@
+<div class="home-container">
+  <div class="overlay-background" style="opacity: 0.6;"></div>
+  <div id="jarallax-container-0">
+    <div class="container text-center mt-5 content-container" style="margin-top: 10rem!important;">
+      <!-- Large Heading -->
+      <div class="heading mb-4" >
+        <h1 class="display-4 main-heading"><span class="highlight">Your customers will love you <br> one minute from now.</span></h1>
+        <p class="subheading">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+      </div>
+
+      <!-- Action Buttons -->
+      <% unless user_signed_in? %>
+      <div class="action-buttons">
+         <%= link_to 'Log_in', new_user_session_path, class: 'btn btn-primary btn-lg mx-3 capsule-button' %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

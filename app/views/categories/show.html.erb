@@ -1,0 +1,19 @@
+<h1>Category: <%= @category.c_name %></h1>
+
+<p>Size: <%= @category.c_size %></p>
+
+<h2>Products in this Category:</h2>
+<% if @products.any? %>
+  <ul>
+    <% @products.each do |product| %>
+      <li>
+        <%= link_to product.name, category_product_path(@category, product) %> - 
+        Price: <%= product.price %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No products available in this category.</p>
+<% end %>
+
+<%= link_to 'Back to category', categories_path, class: 'btn btn-secondary mb-0' %>

@@ -1,0 +1,34 @@
+<!-- app/views/customers/new.html.erb -->
+<h1>Create a New Customer</h1>
+
+<%= form_with model: @customer, url: customers_path, local: true do |form| %>
+  <% if @customer.errors.any? %>
+    <div class="alert alert-danger">
+      <h4>There were errors with your submission:</h4>
+      <ul>
+        <% @customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :email %>
+    <%= form.email_field :email, class: 'form-control', autofocus: true %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :password %>
+    <%= form.password_field :password, class: 'form-control', autocomplete: "off" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, class: 'form-control', autocomplete: "off" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.submit 'Create Customer', class: 'btn btn-primary' %>
+  </div>
+<% end %>
