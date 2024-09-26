@@ -8,6 +8,7 @@ Rails.application.routes.draw do
         registrations: 'api/v1/users/registrations',
         sessions: 'api/v1/users/sessions'
       }
+      get 'home', to: "home#index"
     end
   end
 
