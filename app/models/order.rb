@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# app/models/order.rb
 class Order < ApplicationRecord
   after_create :set_order_no
   after_save :update_total_amount

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# app/controllers/products_controller.rb
 class ProductsController < ApplicationController
   before_action :set_category, only: %i[index show new create edit update destroy]
   skip_before_action :verify_authenticity_token, only: [:prices]
