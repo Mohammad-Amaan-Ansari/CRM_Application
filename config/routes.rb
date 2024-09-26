@@ -1,8 +1,16 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  # get "up" => "rails/health#show", as: :rails_health_check
-  devise_for :users
+  devise_for :users, controllers: { sessions: 'sessions' }
+  namespace :api do
+    namespace :v1 do
+      devise_for :users, controllers: {
+        registrations: 'api/v1/users/registrations',
+        sessions: 'api/v1/users/sessions'
+      }
+      get 'home', to: "home#index"
+    end
+  end
 
   root to: 'home#index'
   get 'all_products', to: 'products#all_products', as: 'all_products'

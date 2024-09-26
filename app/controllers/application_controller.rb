@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# app/controllers/application_controller.rb
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   include CanCan::ControllerAdditions
@@ -13,5 +14,6 @@ class ApplicationController < ActionController::Base
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:role])
     devise_parameter_sanitizer.permit(:account_update, keys: [:role])
+    devise_parameter_sanitizer.permit(:sign_in, keys: %i[email password])
   end
 end

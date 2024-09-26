@@ -1,0 +1,24 @@
+AllCops:
+  TargetRubyVersion: 3.0  # Adjust based on the Ruby version you are using
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/MethodLength:
+  Max: 30
+
+Metrics/BlockLength:
+  Max: 30
+
+Metrics/ClassLength:
+  Max: 200
+
+Metrics/CyclomaticComplexity:
+  Max: 10 # Increase this if necessary
+
+Metrics/PerceivedComplexity:
+  Max: 10 # Increase this if necessary
+
+Layout/LineLength:
+  Max: 200 # Adjust the line length limit
+
