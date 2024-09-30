@@ -59,9 +59,7 @@
 								<turbo-frame id="content-frame">
 								<div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
 									<%= link_to 'My Profile', edit_user_registration_path, class: 'dropdown-item' %>
-									<%#= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'dropdown-item',data: { turbo_method: 'delete' }  %>
-									<%= button_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete } %>
-
+									<%= button_to 'Log out', destroy_user_session_path, method: :delete, class: 'dropdown-item',data: { turbo_method: 'delete' }  %>
 								</div>
 								</turbo-frame>
 							</li>
