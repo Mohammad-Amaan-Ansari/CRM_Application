@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Metrics/BlockLength
 Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: 'sessions' }
   namespace :api do
@@ -18,7 +17,6 @@ Rails.application.routes.draw do
       end
     end
   end
-  # rubocop:enable Metrics/BlockLength
   root to: 'home#index'
   get 'all_products', to: 'products#all_products', as: 'all_products'
   post 'products/prices', to: 'products#prices'
