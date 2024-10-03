@@ -73,6 +73,7 @@ gem 'image_processing', '>= 1.2'
 gem 'prawn', '~> 2.4' # for generating pdfs
 gem 'prawn-table', '~> 0.2.2' # for adding tables to prawn pdfs, -
 # because most reports have tables in them.
+gem 'active_model_serializers'
 gem 'cancancan', '~> 3.0'
 gem 'devise-jwt'
 gem 'devise_token_auth'
