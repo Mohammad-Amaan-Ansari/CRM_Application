@@ -23,7 +23,6 @@ ActiveRecord::Schema[7.1].define(version: 20_240_925_122_121) do
     t.index %w[record_type record_id name blob_id], name: 'index_active_storage_attachments_uniqueness', unique: true
   end
   # rubocop:enable Metrics/BlockLength
-
   create_table 'active_storage_blobs', force: :cascade do |t|
     t.string 'key', null: false
     t.string 'filename', null: false
@@ -51,7 +50,7 @@ ActiveRecord::Schema[7.1].define(version: 20_240_925_122_121) do
 
   create_table 'orders', force: :cascade do |t|
     t.string 'order_no'
-    t.decimal 'total_amount'
+    t.float 'total_amount'
     t.string 'invoice'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
