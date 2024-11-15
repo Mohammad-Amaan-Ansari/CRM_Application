@@ -15,6 +15,19 @@ Rails.application.routes.draw do
           get 'generate_pdf' # Route to generate PDF for a specific order
         end
       end
+
+      resources :categories do
+        resources :products do
+          member do
+            delete 'remove_image/:attachment_id', to: 'products#remove_image', as: 'remove_image' # Route to remove a product image
+          end
+          collection do
+            post 'prices' # Route to get product prices by IDs
+          end
+        end
+      end
+
+      get 'products/all', to: 'products#all_products' # Route to get all products without a category
     end
   end
 
